@@ -1,0 +1,10 @@
+# Python Files
+.venv/
+__pycache__/
+*.pyc
+
+# Misc
+.env
+.vscode
+.DS_Store
+*.log
