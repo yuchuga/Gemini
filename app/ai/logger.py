@@ -5,7 +5,7 @@ logging.basicConfig(
   format='%(asctime)s [%(levelname)s] %(message)s', # Timestamp, log level, message
   handlers=[
     logging.StreamHandler(), # Console output
-    logging.FileHandler('gemini.log', encoding='utf-8') # File output
+    logging.FileHandler('ai.log', encoding='utf-8') # File output
   ]
 )
 
