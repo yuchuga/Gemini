@@ -1,6 +1,9 @@
 # Run App
 uv run app/main.py
 
+# Run Specific File
+uv run app/agent/openAI.py
+
 # Test API Endpoint
 http://127.0.0.1:8080/chat-gemini 
 

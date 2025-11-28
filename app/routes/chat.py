@@ -1,7 +1,7 @@
 from fastapi import Depends, APIRouter
 from pydantic import BaseModel
-from ai.initialize import ai_platform
-from ai.openAI import chat_openai 
+from agent.initialize import ai_platform
+from agent.groq import chat_groq
 from auth.apiAuth import get_user_identifier
 from auth.throttle import apply_rate_limit
 
@@ -15,10 +15,11 @@ class ChatResponse(BaseModel):
   response: str
 
 # API Endpoints
-@router.post('/chat-openai', response_model=ChatResponse)
+@router.post('/chat-groq', response_model=ChatResponse)
 def ask_llm(request: ChatRequest):
-  response = chat_openai(request.prompt)
-  return ChatResponse(response=response)
+  response = chat_groq(request.prompt)
+  AIMessage = response["messages"][1].content
+  return ChatResponse(response=AIMessage)
 
 @router.post('/chat-gemini', response_model=ChatResponse)
 async def chat(request: ChatRequest, user_id: str = Depends(get_user_identifier)):

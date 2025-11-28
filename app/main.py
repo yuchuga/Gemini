@@ -15,6 +15,6 @@ app.add_middleware(
   allow_headers=["*"]
 )
 
-if __name__ == '__main__': #execute only in if statement
-  import uvicorn #web server
+if __name__ == '__main__': # execute only in if statement
+  import uvicorn # web server
   uvicorn.run('main:app', host='127.0.0.1', port=8080, reload=True)

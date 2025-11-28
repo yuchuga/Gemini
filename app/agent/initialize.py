@@ -2,11 +2,11 @@ import os
 from dotenv import load_dotenv
 from pathlib import Path
 from .gemini import Gemini
-from .logger import logger
+from excep.logger import logger
 
 load_dotenv() 
 
-def load_system_prompt(file_path: str='app/ai/system-prompt.md') -> str:
+def load_system_prompt(file_path: str='app/prompt/system-prompt.md') -> str:
   path = Path(file_path)  
   if not path.is_file():
     logger.error('System prompt file not found!')

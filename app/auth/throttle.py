@@ -1,6 +1,6 @@
 import time
 from collections import defaultdict
-from exc.exceptions import raise_requests_exception
+from excep.exceptions import raise_requests_exception
 
 # Authenticated users constants
 AUTH_RATE_LIMIT = 5

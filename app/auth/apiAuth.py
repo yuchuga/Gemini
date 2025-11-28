@@ -2,7 +2,7 @@ from fastapi import Depends
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
 from typing import Optional
-from exc.exceptions import raise_unauthorized_exception
+from excep.exceptions import raise_unauthorized_exception
 
 SECRET_KEY = 'a-string-secret-at-least-256-bits-long'
 ALGORITHM = 'HS256'
