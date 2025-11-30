@@ -1,3 +1,6 @@
+# Install Packages
+uv add `"langchain[openai]"`
+
 # Run App
 uv run app/main.py
 

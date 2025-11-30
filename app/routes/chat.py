@@ -19,7 +19,7 @@ class ChatResponse(BaseModel):
 def ask_llm(request: ChatRequest):
   response = chat_groq(request.prompt)
   AIMessage = response["messages"][1].content
-  return ChatResponse(response=AIMessage)
+  return AIMessage
 
 @router.post('/chat-gemini', response_model=ChatResponse)
 async def chat(request: ChatRequest, user_id: str = Depends(get_user_identifier)):

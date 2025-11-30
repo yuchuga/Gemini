@@ -4,7 +4,7 @@ import os
 
 load_dotenv() 
 
-llm = ChatOpenAI(model='gpt-5-mini', api_key=os.getenv('OPEN_API_KEY')) # read by default OPEN_API_KEY
+agent = ChatOpenAI(model='gpt-5-mini', api_key=os.getenv('OPEN_API_KEY')) # read by default OPEN_API_KEY, can remove api_key
 def chat_openai(prompt: str) -> str:
-  response = llm.invoke(prompt)
+  response = agent.invoke(prompt)
   return response.content

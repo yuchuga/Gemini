@@ -20,7 +20,7 @@ def load_system_prompt(file_path: str='app/prompt/system-prompt.md') -> str:
     return ''
  
 system_prompt = load_system_prompt() 
-gemini_api_key = os.getenv('GEMINI_API_KEY')
+gemini_api_key = os.getenv('GOOGLE_API_KEY')
 # print('api_key', gemini_api_key)
 
 if not gemini_api_key:
