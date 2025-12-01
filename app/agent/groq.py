@@ -13,6 +13,7 @@ class OutputSchema(BaseModel):
 
 @tool('get_weather', description='Return weather information', return_direct=False)
 def get_weather(city: str) -> dict:
+  """Get weather for a city"""
   try: 
     url = f'https://wttr.in/{city}?format=j1'
     response = requests.get(url)
@@ -21,7 +22,7 @@ def get_weather(city: str) -> dict:
     return  { 'Error': str(e) }
 
 agent = create_agent(
-  model='groq:llama-3.1-8b-instant', # gemini-2.5-flash
+  model='groq:llama-3.1-8b-instant',
   tools=[get_weather],
   system_prompt='You are a helpful chat assistant. Be clear, concise and polite.',
   response_format=ToolStrategy(OutputSchema)
