@@ -1,6 +1,6 @@
 from fastapi import Depends, APIRouter
 from pydantic import BaseModel
-from agent.initialize import ai_platform
+from routes.config import ai_platform
 from agent.groq import chat_groq
 from auth.apiAuth import get_user_identifier
 from auth.throttle import apply_rate_limit

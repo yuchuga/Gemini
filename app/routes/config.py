@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from pathlib import Path
-from .gemini import Gemini
+from agent.gemini import Gemini
 from excep.logger import logger
 
 load_dotenv() 
